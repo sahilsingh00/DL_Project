@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 
 # Load the trained model
-model = tf.keras.models.load_model("satellite_model.h5")
+model = tf.keras.models.load_model("satellite_classifier.h5")
 
 # Define class labels
 categories = ["Cloudy", "Desert", "Green Area", "Water"]
