@@ -1,4 +1,4 @@
 tensorflow
 numpy
 pandas
-cv2
+opencv2-python
