@@ -38,6 +38,13 @@ if uploaded_file is not None:
         predicted_class = np.argmax(predictions, axis=1)[0]
         confidence = np.max(predictions) * 100
 
+        # Debugging: Print Raw Predictions
+        st.write("🔹 Raw Model Output:", predictions)
+
+        # Check if all predictions are favoring "Cloudy"
+        if np.all(predictions < 0.5):  # If all classes have low confidence
+            st.warning("⚠️ Model confidence is low. The model might not be well-trained.")
+        
         # Show the result
         st.write(f"### 🛰 Predicted Class: *{categories[predicted_class]}*")
         st.write(f"### 🔍 Confidence: *{confidence:.2f}%*")
